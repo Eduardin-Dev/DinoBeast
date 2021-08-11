@@ -1,343 +1,340 @@
-body, ul, li, p, h1, blockquote {
-    margin: 0;
-    padding: 0;
+body,
+ul,
+li,
+p,
+h1,
+blockquote {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Vollkorn', Georgia, sans-serif;
+  font-family: "Vollkorn", Georgia, sans-serif;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 img {
-    max-width: 100%;
-    display: block;
-    border-radius: 5px;
+  max-width: 100%;
+  display: block;
+  border-radius: 5px;
 }
 
 .estrutura {
-    display: grid;
-    grid-template-columns: minmax(160px, 1fr) auto 300px;
-    grid-template-areas:
-        "header header header"
-        "sidenav conteudo anuncios"
-        "footer footer footer"
-    ;
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) auto 300px;
+  grid-template-areas:
+    "header header header"
+    "sidenav conteudo anuncios"
+    "footer footer footer";
 }
 
 @media (max-width: 1200px) {
-    .estrutura {
-        grid-template-columns: minmax(160px, 1fr) auto;
-        grid-template-areas:
-            "header header"
-            "sidenav conteudo"
-            "sidenav anuncios"
-            "footer footer"
-        ;
-    }
+  .estrutura {
+    grid-template-columns: minmax(160px, 1fr) auto;
+    grid-template-areas:
+      "header header"
+      "sidenav conteudo"
+      "sidenav anuncios"
+      "footer footer";
+  }
 }
 
 @media (max-width: 760px) {
-    .estrutura {
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "header"
-            "sidenav"
-            "conteudo"
-            "anuncios"
-            "footer"
-        ;
-    }
+  .estrutura {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "conteudo"
+      "anuncios"
+      "footer";
+  }
 }
 
 /* HEADER */
 
 .header {
-    grid-area: header;
-    background: linear-gradient(135deg, #00e600, #4dff4d);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 20px;
+  grid-area: header;
+  background: linear-gradient(135deg, #00e600, #4dff4d);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 20px;
 }
 
 .header ul {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header li + li {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .header a {
-    display: block;
-    padding: 10px;
-    color: white;
-    font-size: 1em;
-    background: rgba(0,0,0,.1);
-    border-radius: 5px;
-    transition: 0.1s;
+  display: block;
+  padding: 10px;
+  color: white;
+  font-size: 1em;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.1s;
 }
 
 .header a:hover {
-    background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-    max-width: 150px;
-    padding: 10px;
+  max-width: 150px;
+  padding: 10px;
 }
-
 
 @media (max-width: 760px) {
-    .header {
-        grid-template-columns: 100%;
-    }
+  .header {
+    grid-template-columns: 100%;
+  }
 
-    .logo {
-        margin-bottom: 10px;
-    }
+  .logo {
+    margin-bottom: 10px;
+  }
 
-    .header nav a {
-        font-size: 1em;
-    }
+  .header nav a {
+    font-size: 1em;
+  }
 
-    .header li + li {
-        margin-left: 10px;
-    }
+  .header li + li {
+    margin-left: 10px;
+  }
 }
-
 
 /* SIDENAV */
 
-
 @keyframes seta {
-    from {
-        right: 30px;
-    }
+  from {
+    right: 30px;
+  }
 
-    to {
-        right: 20px;
-    }
+  to {
+    right: 20px;
+  }
 }
 
 .sidenav {
-    grid-area: sidenav;
-    padding: 30px;
-    background: #fafbfc;
+  grid-area: sidenav;
+  padding: 30px;
+  background: #fafbfc;
 }
 
-.sidenav li a{
-    display: block;
-    background: white;
-    padding: 20px;
-    min-width: 60px;
-    max-width: 80px;
-    margin: 0 auto 30px auto;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
-    transition: .1s ease-out;
+.sidenav li a {
+  display: block;
+  background: white;
+  padding: 20px;
+  min-width: 60px;
+  max-width: 80px;
+  margin: 0 auto 30px auto;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  transition: 0.1s ease-out;
 }
 
 .sidenav li a:hover {
-    background: #95ff8d;
+  background: #95ff8d;
 }
 
 @media (max-width: 760px) {
-    .sidenav {
-        padding: 0 30px;
-        position: relative;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Cria a barra de touck pro IPHONE e Browsers */
-        -ms-overflow-style: -ms-autohiding-scrollbar; /* Esconde a barra quando estiver em dispositivo microsoft */
-    }
+  .sidenav {
+    padding: 0 30px;
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Cria a barra de touck pro IPHONE e Browsers */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Esconde a barra quando estiver em dispositivo microsoft */
+  }
 
-    .sidenav::after { /* Seta animação */
-        content: '→';
-        position: absolute;
-        top: 5px;
-        right: 30px;
-        color: rgba(0,0,0,.3);
-        animation: seta .5s ease-in 0s infinite alternate;
-    }
+  .sidenav::after {
+    /* Seta animação */
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
 
+  .sidenav ul {
+    display: flex;
+  }
 
-    .sidenav ul {
-        display: flex;
-    }
+  .sidenav ul li {
+    flex: 1 0 60px; /* 1 = para pega de ponta a ponta */
+  } /* 60px = o tamanho minimo da li */
 
-    .sidenav ul li {
-        flex: 1 0 60px;/* 1 = para pega de ponta a ponta */
-    }                   /* 60px = o tamanho minimo da li */
-
-    .sidenav li a {
-        margin: 30px 30px 30px 0px;
-    }
+  .sidenav li a {
+    margin: 30px 30px 30px 0px;
+  }
 }
 
 /* ESTILO CONTEUDO */
 
 p {
-    font-size: 1em;
-    line-height: 1.6;
-    letter-spacing: -0.005em;
-    color: rgba(0,0,0,0.7);
+  font-size: 1em;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, 0.7);
 }
 
-
 .informacoes p + p {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 /* CONTEUDO */
 
 .conteudo {
-    grid-area: conteudo;
-    max-width: 700px;
-    padding: 30px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+  grid-area: conteudo;
+  max-width: 700px;
+  padding: 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
 }
 
 @media (max-width: 760px) {
-    .conteudo {
-        grid-template-columns: auto;
-    }
+  .conteudo {
+    grid-template-columns: auto;
+  }
 }
 
 .depontaponta {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .destaque {
-    color: #00e600;
+  color: #00e600;
 }
 
 .img1 {
-    grid-row: span 2;
-    align-self: end;
+  grid-row: span 2;
+  align-self: end;
 }
 
 .img2 {
-    align-self: end;
+  align-self: end;
 }
 
 /* TITULO */
 
 .titulo {
-    color: #95ff8d;
+  color: #95ff8d;
 }
 
 .titulo h1 {
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .titulo span {
-    font-size: 0.875em;
-    font-family: italic;
+  font-size: 0.875em;
+  font-family: italic;
 }
 
 /* CARACTERISTICAS */
 
 .caracteristicas {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .caracteristicas > div {
-    width: 80px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
-    background: linear-gradient(135deg, #00e600, #4dff4d);
-    position: relative;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #00e600, #4dff4d);
+  position: relative;
 }
 
 .caracteristicas > div:first-child {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .caracteristicas span {
-    display: block;
-    color: #a8dba4;
+  display: block;
+  color: #789976;
 }
 
 .numero {
-    font-size: 3em;
-    line-height: 1;
-    margin: 10px auto;
+  font-size: 3em;
+  line-height: 1;
+  margin: 10px auto;
 }
 
 .rotulo {
-    background: white;
-    border-radius: 0 0 5px 5px;
-    padding: 5px 0;
-    position: relative;
-    top: 2px;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
 }
 
-.citacao, .atributos {
-    padding: 30px;
-    background: linear-gradient(135deg, #00e600, #4dff4d);
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgba(0,0,0,.15);
-    align-self: start;
+.citacao,
+.atributos {
+  padding: 30px;
+  background: linear-gradient(135deg, #00e600, #4dff4d);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  align-self: start;
 }
 
 .citacao p {
-    color: white;
-    font-size: 1.5em;
-    font-family: italic;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 430px;
+  color: white;
+  font-size: 1.5em;
+  font-family: italic;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 430px;
 }
 
 .atributos li {
-    color: white;
-    font-family: Courier, monospace;
-    font-size: 1em;
-    padding: 15px;
+  color: white;
+  font-family: Courier, monospace;
+  font-size: 1em;
+  padding: 15px;
 }
 
 .atributos li + li {
-    border-top: 2px solid #95ff8d;
+  border-top: 2px solid #95ff8d;
 }
-
 
 /* ANUNCIOS */
 
 .anuncios {
-    grid-area: anuncios;
-    display: grid;
-    align-content: start;
-    grid-gap: 30px;
-    background: #fafbfc;
-    padding: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-area: anuncios;
+  display: grid;
+  align-content: start;
+  grid-gap: 30px;
+  background: #fafbfc;
+  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
-
 
 /* FOOTER */
 
 .footer {
-    grid-area: footer;
-    padding: 30px;
-    background: linear-gradient(135deg, #00e600, #4dff4d);
+  grid-area: footer;
+  padding: 30px;
+  background: linear-gradient(135deg, #00e600, #4dff4d);
 }
 
 .footer p {
-    text-align: center;
-    color: white;
+  text-align: center;
+  color: white;
 }
